@@ -1,0 +1,646 @@
+/* ===== StarHab Website CSS ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #000;
+  color: #e6eef6;
+  overflow-x: hidden;
+}
+
+.bg-wrap {
+  background-image: url('photo/Milky\ Way.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  filter: brightness(0.45) contrast(1.05);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(2,6,23,0.7));
+  z-index: -1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo .mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#ffffff,#c6e6ff);
+  color: #051124;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 600;
+  opacity: 0.85;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  opacity: 1;
+  color: #6ee7b7;
+}
+
+/* ===== Header ===== */
+.header {
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-left h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.header-left p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #cfe9ff;
+}
+
+.header-right img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: linear-gradient(90deg,#0ea5ff,#6ee7b7);
+  color: #041423;
+}
+
+.btn.primary:hover {
+  opacity: 0.9;
+}
+/*=== team ===*/
+.team {
+      padding: 80px 20px;
+      text-align: center;
+      color: #e6eef6;
+    }
+
+    .team h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .team .intro {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #cfe9ff;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .member {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .member img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .member h3 {
+      margin-bottom: 5px;
+      color: #6ee7b7;
+    }
+
+    .member p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .member a {
+      color: #0ea5ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .member a:hover {
+      color: #6ee7b7;
+    }
+
+    @media (max-width: 768px) {
+      .team h1 { font-size: 32px; }
+      .team .intro { font-size: 16px; }
+    }
+
+    /* Hamburger menu */
+.hamburger {
+display: none;
+flex-direction: column;
+justify-content: space-between;
+width: 26px;
+height: 20px;
+cursor: pointer;
+z-index: 1001;
+}
+
+
+.hamburger span {
+display: block;
+height: 3px;
+width: 100%;
+background: #fff;
+border-radius: 3px;
+transition: 0.3s;
+}
+
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+.hamburger {
+display: flex;
+}
+
+
+.nav-links {
+position: fixed;
+top: 0;
+right: -100%;
+height: 100vh;
+width: 60%;
+background: rgba(0, 0, 0, 0.9);
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 2rem;
+transition: right 0.4s ease;
+z-index: 1000;
+}
+
+
+.nav-links.active {
+right: 0;
+}
+
+
+.nav-links a {
+font-size: 20px;
+}
+
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translateY(8px);
+}
+
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translateY(-8px);
+}
+}
+
+
+@media (max-width: 768px) {
+.team h1 { font-size: 32px; }
+.team .intro { font-size: 16px; }
+}
+
+/* ===== Features ===== */
+.features {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.feature-item {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.feature-item h3 {
+  margin-bottom: 10px;
+  color: #6ee7b7;
+}
+
+/* ===== Testimonial ===== */
+.testimonial {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.testimonial blockquote {
+  font-style: italic;
+  font-size: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+/* ===== Pricing ===== */
+.pricing {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.price-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.price-card h3 {
+  margin-bottom: 10px;
+}
+
+/* ===== CTA ===== */
+.cta {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* ===== Social Links ===== */
+.social {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.social-links a {
+  color: #6ee7b7;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.social-links a:hover {
+  color: #0ea5ff;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 30px 10px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #9fbddf;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header-left h1 {
+    font-size: 32px;
+  }
+
+  /* ----- Navbar ----- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.logo .mark {
+  background: #6ee7b7;
+  color: #000;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+/* ----- Links ----- */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #6ee7b7;
+}
+
+/* ----- Hamburger Button ----- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 4px rgba(255,255,255,0.8);
+  transition: all 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    padding: 20px;
+    width: 200px;
+    text-align: right;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+.team {
+      padding: 80px 20px;
+      text-align: center;
+      color: #e6eef6;
+    }
+
+    .team h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .team .intro {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #cfe9ff;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .member {
+      background: rgba(255,255,255,0.05);
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .member img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .member h3 {
+      margin-bottom: 5px;
+      color: #6ee7b7;
+    }
+
+    .member p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .member a {
+      color: #0ea5ff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .member a:hover {
+      color: #6ee7b7;
+    }
+
+    @media (max-width: 768px) {
+      .team h1 { font-size: 32px; }
+      .team .intro { font-size: 16px; }
+    }
+
+    /* Hamburger menu */
+.hamburger {
+display: none;
+flex-direction: column;
+justify-content: space-between;
+width: 26px;
+height: 20px;
+cursor: pointer;
+z-index: 1001;
+}
+
+
+.hamburger span {
+display: block;
+height: 3px;
+width: 100%;
+background: #fff;
+border-radius: 3px;
+transition: 0.3s;
+}
+
+
+.nav-links {
+display: flex;
+gap: 1.5rem;
+}
+
+
+@media (max-width: 768px) {
+.hamburger {
+display: flex;
+}
+
+
+.nav-links {
+position: fixed;
+top: 0;
+right: -100%;
+height: 100vh;
+width: 60%;
+background: rgba(0, 0, 0, 0.9);
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 2rem;
+transition: right 0.4s ease;
+z-index: 1000;
+}
+
+
+.nav-links.active {
+right: 0;
+}
+
+
+.nav-links a {
+font-size: 20px;
+}
+
+
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translateY(8px);
+}
+
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translateY(-8px);
+}
+}
+
+
+@media (max-width: 768px) {
+.team h1 { font-size: 32px; }
+.team .intro { font-size: 16px; }
+}
+}
